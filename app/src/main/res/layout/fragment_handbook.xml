@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/handbookFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1,2"
+    tools:context=".HandbookFragment">
+
+    <TableRow
+        android:background="@color/black">
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="COLOR NAME"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="HEX"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_colors_handbook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</TableLayout>

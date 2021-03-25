@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/handbookFragment"
+        android:name="by.it.academy.colorsapp.HandbookFragment"
+        android:label="handbook"
+        tools:layout="@layout/fragment_handbook" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="by.it.academy.colorsapp.QuizFragment"
+        android:label="quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="by.it.academy.colorsapp.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+
+
+</navigation>
