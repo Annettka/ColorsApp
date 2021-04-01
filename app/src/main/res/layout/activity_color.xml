@@ -2,28 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/certain_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ColorActivity"
-    android:id="@+id/certain_color"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ColorActivity">
 
     <TextView
         android:id="@+id/certain_color_hexCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="300dp"
         android:gravity="center"
-        android:textSize="40sp"
-        android:layout_marginTop="300dp"/>
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/copy_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/copy"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:text="@string/copy" />
 
 </LinearLayout>

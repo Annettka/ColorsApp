@@ -7,8 +7,8 @@
     android:stretchColumns="1,2"
     tools:context=".HandbookFragment">
 
-    <TableRow
-        android:background="@color/black">
+    <TableRow android:background="@color/black">
+
         <TextView
             android:layout_column="1"
             android:gravity="center"
@@ -32,6 +32,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_colors_handbook"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </TableLayout>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import by.it.academy.colorsapp.MainActivity.Companion.colorsList
 
 class HandbookFragment : Fragment() {
     override fun onCreateView(
@@ -16,14 +17,7 @@ class HandbookFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_handbook, container, false)
         val rView = view.findViewById<RecyclerView>(R.id.recycler_view_colors_handbook)
         rView.layoutManager = LinearLayoutManager(context)
-        rView.adapter = ColorsTableRecyclerAdapter(getColorNamesList(),getColorHexList())
+        rView.adapter = ColorsTableRecyclerAdapter(colorsList)
         return view
-    }
-
-    private fun getColorNamesList(): List<String> {
-        return this.resources.getStringArray(R.array.color_names).toList()
-    }
-    private fun getColorHexList(): List<String> {
-        return this.resources.getStringArray(R.array.colors).toList()
     }
 }

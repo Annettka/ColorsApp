@@ -1,7 +1,5 @@
 package by.it.academy.colorsapp
 
-import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -9,20 +7,23 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ColorsTableRecyclerAdapter(private val colors: List<String>, private val values: List<String>) :
+class ColorsTableRecyclerAdapter(
+    private val values: MutableList<by.it.academy.colorsapp.Color>
+) :
     RecyclerView.Adapter<ColorsTableRecyclerAdapter.MyViewHolder>() {
 
-    override fun getItemCount() = colors.size
+    override fun getItemCount() = values.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_handbook_item, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.recycler_view_handbook_item, parent, false)
         return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val colorName = colors[position]
-        val colorHex = values[position]
+        val colorName = values[position].colorName
+        val colorHex = values[position].colorHEXCode
         holder.colorName?.text = colorName
         holder.colorHexCode?.text = colorHex
         if (holder.colorHexCode?.text == "#000000") {

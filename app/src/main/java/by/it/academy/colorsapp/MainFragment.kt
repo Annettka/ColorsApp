@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import by.it.academy.colorsapp.MainActivity.Companion.colorsList
 
 
 class MainFragment : Fragment() {
@@ -16,13 +17,10 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = RecyclerAdapter(getColorList())
+        recyclerView.adapter = RecyclerAdapter(colorsList)
         return view
-    }
-
-    private fun getColorList(): List<String> {
-        return this.resources.getStringArray(R.array.colors).toList()
     }
 }

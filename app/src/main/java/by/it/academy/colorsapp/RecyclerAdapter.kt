@@ -1,6 +1,5 @@
 package by.it.academy.colorsapp
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -9,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter(private val values: List<String>) :
+class RecyclerAdapter(private val values: MutableList<by.it.academy.colorsapp.Color>) :
     RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
 
     override fun getItemCount() = values.size
@@ -21,16 +20,16 @@ class RecyclerAdapter(private val values: List<String>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val itemView = values[position]
-        val context = holder.textView?.context
-        holder.textView?.text = itemView
-        if (holder.textView?.text == "#000000")
-            holder.textView?.setTextColor(Color.WHITE)
-        holder.textView?.setBackgroundColor(Color.parseColor(itemView))
-        holder.textView?.setOnClickListener {
-            val intent = Intent(context, ColorActivity::class.java)
-            intent.putExtra("color", itemView)
-            context?.startActivity(intent)
+        holder.textView?.apply {
+            text = values [position].colorHEXCode
+            if (text == "#000000")
+                setTextColor(Color.WHITE)
+            setBackgroundColor(Color.parseColor(text as String))
+            setOnClickListener {
+                val intent = Intent(context, ColorActivity::class.java)
+                intent.putExtra("color", text)
+                context?.startActivity(intent)
+            }
         }
     }
 
@@ -39,13 +38,6 @@ class RecyclerAdapter(private val values: List<String>) :
 
         init {
             textView = itemView.findViewById(R.id.textViewColor)
-//            itemView.setOnClickListener {
-//                val context = itemView.context
-//                val intent = Intent(context, ColorActivity::class.java).apply {
-//                    putExtra("color", color)
-//                }
-//                context.startActivity(intent)
-//            }
         }
     }
 }
