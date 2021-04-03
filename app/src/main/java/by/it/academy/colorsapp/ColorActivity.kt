@@ -32,11 +32,11 @@ class ColorActivity : AppCompatActivity() {
 
         if (intent.hasExtra("color")) {
             val color = intent.getStringExtra("color")
-            if (intent.getStringExtra("color") == "#000000")
+            if (color == "#000000")
                 colorHexCode.setTextColor(Color.WHITE)
             else colorHexCode.setTextColor(Color.BLACK)
-            colorHexCode.text = intent.getStringExtra("color")
-            linearLayout.setBackgroundColor(Color.parseColor(intent.getStringExtra("color")))
+            colorHexCode.text = color
+            linearLayout.setBackgroundColor(Color.parseColor(color))
         }
     }
 }
