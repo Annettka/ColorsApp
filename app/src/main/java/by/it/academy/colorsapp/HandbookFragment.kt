@@ -14,10 +14,13 @@ class HandbookFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_handbook, container, false)
+        return inflater.inflate(R.layout.fragment_handbook, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val rView = view.findViewById<RecyclerView>(R.id.recycler_view_colors_handbook)
         rView.layoutManager = LinearLayoutManager(context)
         rView.adapter = ColorsTableRecyclerAdapter(colorsList)
-        return view
     }
 }

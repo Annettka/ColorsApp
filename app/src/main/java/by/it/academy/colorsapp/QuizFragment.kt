@@ -60,10 +60,16 @@ class QuizFragment : Fragment() {
     }
 
     private fun randomColor(): String {
-        return MainActivity.colorsList[Random.nextInt(0, MainActivity.colorsList.size)].colorHEXCode
+        return MainActivity.colorsList[Random.nextInt(
+            0,
+            MainActivity.colorsList.size + 1
+        )].colorHEXCode
     }
 
     private fun randomHexCode(): String {
-        return MainActivity.colorsList[Random.nextInt(0, MainActivity.colorsList.size)].colorHEXCode
+        return MainActivity.colorsList[Random.nextInt(
+            0,
+            MainActivity.colorsList.size + 1
+        )].colorHEXCode
     }
 }
